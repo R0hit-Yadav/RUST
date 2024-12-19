@@ -1,4 +1,4 @@
-
+use std::io::{self, stdin};
 const GLOBAL_VARIABLE:u8=100;
 fn main() {
     println!("Hello, Coder!");
@@ -275,6 +275,42 @@ fn main() {
     println!("{}",element)
    }
 
+   //match 
+   let number=2;
+
+   match number{
+    1=>println!("one"),
+    2=>println!("two"),
+    3 | 4 | 5 =>println!("three,four,five"),
+    _=>println!("other number")
+   }
+
+   //match with guard
+
+   let m=6;
+   match x{
+    n if is_even(n)=>println!("Even"),
+    n if !is_even(n)=>println!("Odd"),
+    _=>println!("other")
+   }
+
+
+//    let result=add(3,4);
+//    println!("result is {}",result);
+
+
+//user input 
+
+println!("Enter your Name: ");
+
+let mut input=String::new();
+io::stdin().read_line(&mut input);
+
+println!("Hello {}!",input);
+
+
+
+   
 
 
 
@@ -371,3 +407,18 @@ fn write_vrr(vrr:&mut Vec<&str>)
 {
     vrr.push("New")
 }
+
+fn is_even(x:i32)->bool
+{
+    return x%2==0;
+}
+
+
+//modules import
+// mod math
+// {
+//  pub fn add(a:i32,b:i32)->i32{
+//      a+b
+// }
+// }
+
