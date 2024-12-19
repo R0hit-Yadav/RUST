@@ -308,16 +308,6 @@ io::stdin().read_line(&mut input);
 
 println!("Hello {}!",input);
 
-
-
-   
-
-
-
-
-
-
-
 }
 
 
