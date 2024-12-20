@@ -5,6 +5,14 @@ struct Person{
 }
 struct Point(i32,i32,i32);
 
+const TWO:i32=2;
+const SQUARE:i32=TWO*TWO;
+
+
+mod config{
+    pub const MAX_CONNECTIONS:i32=100;
+}
+
 fn main() 
 {
     //=================>variables
@@ -116,10 +124,49 @@ fn main()
     let shape=Shape::Circle(5.0);
 
     match shape{
-        Shape:Circle(raduis)=>println!("Circle with raduis {}",raduis),
-        Shape:Rect(width,height)=>println!("Rectangle with width {} and height {}",width,height),
+        Shape::Circle(raduis)=>println!("Circle with raduis {}",raduis),
+        Shape::Rect(width,height)=>println!("Rectangle with width {} and height {}",width,height),
     }
 
+    let car =Vehicle::Car{
+        brand:String::from("BMW"),
+        seats:4,
+    };
+
+    match car{
+        Vehicle::Car{brand,seats}=>println!("Car with brand {} and {} seats",brand,seats),
+        Vehicle::Bike{brand,cc}=>println!("Bike with brand {} and {} cc",brand,cc),
+    }
+
+    let fruits=vec![Fruit::apple,Fruit::orange,Fruit::banana];
+
+    for fruit in fruits{
+        match fruit{
+            Fruit::apple=>println!("apple"),
+            Fruit::orange=>println!("orange"),
+            Fruit::banana=>println!("banana"),
+        }
+    }
+
+    //==================>Result
+    
+    // enum Result<T,E>{
+    //     Ok(T),
+    //     Err(E),
+    // }
+
+    match divide(10,2)
+    {
+        Ok(result)=>println!("Result is {}",result),
+        Err(error)=>println!("Error is {}",error),
+    }
+
+
+    println!("{}",SQUARE);
+    println!("{}",config::MAX_CONNECTIONS);
+
+
+    
 
 
     
@@ -179,3 +226,24 @@ enum Shape{
     Rect(f64,f64),
 
 }
+
+enum Vehicle{
+    Car {brand:String,seats:u8},
+    Bike{brand:String,cc:u32},
+}
+
+enum Fruit{
+    apple,
+    orange,
+    banana,
+}
+
+fn divide(a:i32,b:i32)->Result<i32,String>{
+    if b==0
+    {
+        Err(String::from("div by 0"))
+    }
+    else{Ok(a/b)
+    }
+}
+
