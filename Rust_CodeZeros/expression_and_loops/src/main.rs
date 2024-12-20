@@ -12,7 +12,6 @@ fn main() {
     if number>5
     {
         println!("Greater than 5");
-        
     }
     
 
