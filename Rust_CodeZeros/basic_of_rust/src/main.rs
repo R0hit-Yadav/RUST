@@ -58,8 +58,28 @@ fn main()
     println!("5! is {}",greet4(5));
 
 
-    //====================>Array
-    
+    //====================>Arrays
+
+    let numbers=[1,2,3,4,5];
+    println!("{}",numbers[0]);
+    println!("{:?}",numbers);
+
+    let repeated=[0;5];
+    println!("{:?}",repeated);
+
+    let numbers=[10,20,30,40,50]; //itreating Over Array
+    for num in numbers.iter()
+    {
+        println!("{}",num);
+    }
+
+    println!("{}",numbers.len());
+
+    print_array(numbers);
+
+    let slice=&numbers[1..4];//sclies
+    println!("{:?}",slice);
+
 
 
     
@@ -95,5 +115,13 @@ fn greet4(n:u32)->u32{
     else
     {
         n*greet4(n-1)
+    }
+}
+
+fn print_array(arr:[i32;5])
+{
+    for num in arr.iter()
+    {
+        println!("{}",num);
     }
 }
