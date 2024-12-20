@@ -1,3 +1,22 @@
+//Rust is a modern systems programming language that focuses on performance, safety, and concurrency
+//Systems programming
+//WebAssembly high-performance browser applications
+//Networking and concurrent applications
+
+//Key Features of Rust
+//Memory Safety
+//Concurrency
+//Performance
+//Tooling
+
+//commands
+// cargo build: Compiles the Rust project without running it.
+// cargo run: Compiles and runs the Rust project.
+// cargo check: Compiles the Rust project without running it.
+// cargo test: Compiles and runs the unit tests for the Rust project.
+// cargo doc: Generates documentation for the Rust project.
+// cargo clean: Cleans the build artifacts.
+
 struct Person{
     name:String,
     age:u8,
@@ -166,11 +185,13 @@ fn main()
     println!("{}",config::MAX_CONNECTIONS);
 
 
-    
 
 
-    
-   
+
+
+
+
+
 
 }
 
