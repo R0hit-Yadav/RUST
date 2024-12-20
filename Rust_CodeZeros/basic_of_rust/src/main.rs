@@ -81,6 +81,46 @@ fn main()
     println!("{:?}",slice);
 
 
+    //====================>Tuples
+    let tuple=(1,2,3,4,5);
+    println!("{}",tuple.0);
+    println!("{:?}",tuple);
+
+    let tuple=(1,2,3,4,5);
+    let(a,b,c,d,e)=tuple;
+    println!("a is {},b is {},c is {},d is {},e is {}",a,b,c,d,e);
+
+    let nested_tuple=((1,2,3),(4,5,6));
+    println!("{:?}",nested_tuple);
+    println!("{:?}",(nested_tuple.0).2);
+    
+    let single=(5,);
+
+    println!("{:?}",single);
+
+    let point:(i32,f64,&str)=( 1,2.3,"helloe");
+    println!("{},{},{}",point.0,point.1,point.2);
+    println!("{:?}",point);
+
+
+    //==================ennum
+    let dir=Direction::North;
+
+    match dir {
+        Direction::North=>println!("North"),
+        Direction::South=>println!("South"),
+        Direction::East=>println!("East"),
+        Direction::West=>println!("West"),
+    }
+
+    let shape=Shape::Circle(5.0);
+
+    match shape{
+        Shape:Circle(raduis)=>println!("Circle with raduis {}",raduis),
+        Shape:Rect(width,height)=>println!("Rectangle with width {} and height {}",width,height),
+    }
+
+
 
     
    
@@ -124,4 +164,18 @@ fn print_array(arr:[i32;5])
     {
         println!("{}",num);
     }
+}
+
+
+enum Direction{
+    North,
+    South,
+    East,
+    West
+}
+
+enum Shape{
+    Circle(f64),
+    Rect(f64,f64),
+
 }
