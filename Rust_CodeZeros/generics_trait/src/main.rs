@@ -1,3 +1,4 @@
+mod traits;
 //Generics
 fn display<T:std::fmt::Debug>(value:T)
 {
@@ -105,6 +106,10 @@ fn main() {
 
     let pair=Pair{first:"Rust",second:2024};
     println!("Pair:({},{})",pair.first,pair.second);
+
+    //traits
+    traits::traits();
+
 
 
 }
