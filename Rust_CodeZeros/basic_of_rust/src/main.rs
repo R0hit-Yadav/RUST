@@ -125,7 +125,7 @@ fn main()
 
     println!("{:?}",single);
 
-    let point:(i32,f64,&str)=( 1,2.3,"helloe");
+    let point:(i32,f64,&str)=(1,2.3,"helloe");
     println!("{},{},{}",point.0,point.1,point.2);
     println!("{:?}",point);
 
