@@ -107,6 +107,5 @@ fn main() {
     my_module4::greet5();
 
 
-    
 }
 
