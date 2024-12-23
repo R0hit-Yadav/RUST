@@ -14,20 +14,20 @@ pub fn run() {
   // }
 
   // While Loop (FizzBuzz)
-  // while count <= 100 {
-  //   if count % 15 == 0 {
-  //     println!("fizzbuzz");
-  //   } else if count % 3 == 0 {
-  //     println!("fizz");
-  //   } else if count % 5 == 0 {
-  //     println!("buzz")
-  //   } else {
-  //     println!("{}", count);
-  //   }
+  while count <= 100 {
+    if count % 15 == 0 {
+      println!("fizzbuzz");
+    } else if count % 3 == 0 {
+      println!("fizz");
+    } else if count % 5 == 0 {
+      println!("buzz")
+    } else {
+      println!("{}", count);
+    }
 
-  //   // Inc
-  //   count += 1;
-  // }
+    // Inc
+    count += 1;
+  }
 
   // For Range
   for x in 0..100 {
