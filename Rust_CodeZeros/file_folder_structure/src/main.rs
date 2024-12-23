@@ -59,8 +59,35 @@ mod outer2
    
 }
 use outer2::inner2::greet3;
+
+// module attributes
+#[path = "custom.rs"]
+mod my_module4;
+
+
+
+
+//super and self
+mod parent
+{
+    pub mod child
+    {
+        pub fn child_function()
+        {
+            println!("This is child function")
+        }
+        pub fn call_from_child()
+        {
+            super::parent_function();
+        }
+    }
+    pub fn parent_function()
+    {
+        println!("This is parent function")
+    }
+}
 fn main() {
-    my_module::greet();
+    my_module::greet(); 
 
     outer::inner::say_hello();
 
@@ -73,6 +100,11 @@ fn main() {
     my_module3::export();
 
     greet3();
+
+    parent::child::call_from_child();
+
+    my_module4::greet5();
+
     
 }
 
