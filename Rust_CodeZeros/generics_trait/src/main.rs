@@ -1,0 +1,5 @@
+//Generics
+fn main() {
+    
+    
+}
