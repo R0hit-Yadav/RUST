@@ -12,7 +12,6 @@ impl Speak for Cat
         println!("Woof! Woof!")
     }
 }
-
 impl Speak for Dog
 {
     fn speak(&self)
@@ -51,8 +50,7 @@ fn add_points<T:Addable>(a:T,b:T)-> T
     a.add(&b)
 }
 
-
-//multiple  Traits
+//multiple Traits
 trait Walk
 {
     fn walk(&self);
