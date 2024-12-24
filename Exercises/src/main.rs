@@ -47,6 +47,12 @@ mod ex9_3;
 mod ex9_4;
 
 
+mod ex10_1;
+mod ex10_2;
+mod ex10_3;
+
+
+
 
 
 
@@ -96,5 +102,9 @@ fn main() {
     ex9_2::main();
     ex9_3::main();
     ex9_4::main();
+
+    ex10_1::main();
+    ex10_2::main();
+    ex10_3::main();
 }
 
