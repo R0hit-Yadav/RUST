@@ -47,7 +47,7 @@ impl Addable for Point
 
 fn add_points<T:Addable>(a:T,b:T)-> T
 {
-    a.add(&b)
+    a.add(&b)   
 }
 
 //multiple Traits
