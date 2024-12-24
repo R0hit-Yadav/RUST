@@ -24,6 +24,10 @@ mod ex4_4;
 mod ex4_5;
 // mod ex4_6;
 
+mod ex5_1;
+mod ex5_2;
+
+
 
 
 fn main() {
@@ -50,5 +54,8 @@ fn main() {
     ex4_4::main();
     ex4_5::main();
     // ex4_6::main();
+
+    ex5_1::main();
+    ex5_2::main();
 
 }
