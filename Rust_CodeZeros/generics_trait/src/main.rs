@@ -1,5 +1,6 @@
 mod lifetimes;
 mod traits;
+mod scoping;
 //Generics
 fn display<T:std::fmt::Debug>(value:T)
 {
@@ -113,6 +114,8 @@ fn main() {
 
     lifetimes::main();
 
-    
+    scoping::main();
+
+
 
 }
