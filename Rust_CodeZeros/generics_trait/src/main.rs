@@ -110,9 +110,9 @@ fn main() {
 
     //traits
     traits::traits();
-    
+
     lifetimes::main();
 
-
+    
 
 }
