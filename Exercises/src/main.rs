@@ -37,6 +37,11 @@ mod ex7_1;
 mod ex7_2;
 mod ex7_3;
 
+mod ex8_1;
+mod ex8_2;
+mod ex8_3;
+
+
 
 
 
@@ -77,4 +82,8 @@ fn main() {
     ex7_1::main();
     ex7_2::main();
     ex7_3::main();
+
+    ex8_1::main();
+    ex8_2::main();
+    ex8_3::main();
 }
