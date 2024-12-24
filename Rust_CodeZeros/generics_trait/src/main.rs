@@ -1,3 +1,4 @@
+mod lifetimes;
 mod traits;
 //Generics
 fn display<T:std::fmt::Debug>(value:T)
@@ -109,6 +110,8 @@ fn main() {
 
     //traits
     traits::traits();
+    
+    lifetimes::main();
 
 
 
