@@ -59,6 +59,14 @@ mod ex12_1;
 mod ex12_2;
 mod ex12_3;
 
+mod ex13_1;
+mod ex13_2;
+mod ex13_3;
+mod ex13_4;
+mod ex13_5;
+mod ex13_6;
+
+
 mod ex14_1;
 mod ex14_2;
 
@@ -130,6 +138,15 @@ fn main() {
     ex12_1::main();
     ex12_2::main();
     ex12_3::main();
+
+    ex13_1::main();
+    ex13_2::main();
+    ex13_3::main();
+    ex13_4::main();
+    ex13_5::main();
+    ex13_6::main();
+
+
 
 
     ex14_1::main();
