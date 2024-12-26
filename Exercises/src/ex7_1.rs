@@ -42,11 +42,12 @@ mod tests {
         assert_eq!(green.2, 0);
     }
 
+
     #[test]
     fn unit_structs() {
         // TODO: Instantiate a unit struct.
         // let unit_struct =
-        let message = format!("{unit_struct:?}s are fun!");
+        let message = format!("{UnitStruct:?}s are fun!");
 
         assert_eq!(message, "UnitStructs are fun!");
     }
