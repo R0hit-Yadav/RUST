@@ -1,3 +1,4 @@
+
 //recoverable error
 
 fn divide(a:i32,b:i32)->Result<i32,String>
@@ -68,6 +69,60 @@ fn find_item(items:&[i32],target:i32)->Option<usize>
     items.iter().position(|&x| x == target)
 }
 
+pub fn add(a:i32,b:i32)->i32{
+    a+b
+}
+
+pub fn subtract(a:i32,b:i32)-> i32
+{
+    a-b
+}
+
+
+#[cfg(test)]
+mod tests{
+    use super::*;
+
+    #[test]
+    fn test_add()
+    {
+        assert_eq!(add(2,3),5);// pass
+    }
+
+    #[test]
+    fn test_subtract()
+    {
+        assert_eq!(subtract(10,4),6); // pass
+    }
+
+    #[test]
+    fn test_subtract_fail()
+    {
+        assert_eq!(subtract(10,4),5);//fail
+    }
+
+    #[test]
+    fn test_fail_example()
+    {
+        assert_eq!(2+2,5);//fails
+    }
+
+    #[test]
+    fn test_with_result()->Result<(),String>
+    {
+        if 2 +2 ==4
+        {
+            Ok(())
+        }
+        else
+        {
+            Err(String::from("math is broken!"))
+        }
+    }
+}
+
+
+
 
 
 
@@ -120,7 +175,6 @@ fn main() {
     }
 
 
-    
 
     let items=[1,2,3,4];
     match find_item(&items,3)
@@ -128,6 +182,13 @@ fn main() {
         Some(index)=>println!("Index:{}",index),
         None=>println!("Item not found"),
     }
+
+
+   
+    
+
+
+    
 
 
 
