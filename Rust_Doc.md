@@ -47,3 +47,40 @@ Performance: Generics are monomorphized at compile time,
 meaning there’s no runtime performance cost.
 
 
+# Async 
+A runtime in Rust provides the necessary environment to execute asynchronous tasks.
+
+## Popular Async Runtimes in Rust
+### Tokio
+A powerful and popular runtime.
+
+Provides support for async I/O, networking, and timers 
+
+Used for building scalable network services.
+
+### async-std
+Similar to Rust's std library but designed for asynchronous programming.
+
+Provides utilities for async file I/O, networking, and more.
+
+### Smol
+A lightweight async runtime.
+
+Focused on minimalism and ease of use.
+
+### Actix
+
+A framework/runtime often used for web services.
+
+### What is await?
+The await keyword is used to pause execution of an async function until the associated Future is ready to produce a value.
+
+async fn:Defines an asynchronous function that returns a Future.
+
+Async programming in Rust revolves around Futures and is powered by runtimes like Tokio and async-std.
+
+The async keyword turns functions into Futures, while await pauses execution until the Future resolves.
+
+Runtimes manage task scheduling and execution efficiently.
+
+Rust’s async system ensures high performance without compromising safety.
