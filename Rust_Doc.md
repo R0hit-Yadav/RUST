@@ -25,6 +25,9 @@ A trait in Rust is a collection of methods that types can implement. It defines 
 
 
 Traits define shared behavior in Rust and can be implemented for any type.
+
 Traits are essential for generic programming and enforcing constraints.
+
 Rust's standard library provides a rich set of traits like Sized, Send, Clone, etc.
+
 Deriving traits (e.g., #[derive(Debug, Clone)]) simplifies implementation.
