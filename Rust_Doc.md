@@ -33,10 +33,10 @@ Rust's standard library provides a rich set of traits like Sized, Send, Clone, e
 Deriving traits (e.g., #[derive(Debug, Clone)]) simplifies implementation.
 
 
-## Generics
+# Generics
 Generics in Rust allow you to write code that works with many different types without sacrificing type safety. By using generics, you can define functions, structs, enums, or methods that are flexible and reusable.
 
-# Key Benefits of Generics
+## Key Benefits of Generics
 Type Safety: Ensures the correct type is used.
 
 Reusability: Write once, use for multiple types.
