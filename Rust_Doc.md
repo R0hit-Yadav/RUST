@@ -84,3 +84,43 @@ The async keyword turns functions into Futures, while await pauses execution unt
 Runtimes manage task scheduling and execution efficiently.
 
 Rust’s async system ensures high performance without compromising safety.
+
+
+# Thread 
+A thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler. In Rust, threads allow you to perform concurrent tasks by running them in parallel on different CPU cores. Rust provides a safe and efficient threading model to handle concurrency.
+
+### What is Task ?
+A task is an abstraction over a unit of work that may run asynchronously. Tasks can be managed by an async runtime, unlike threads that are managed by the operating system.
+Tasks are generally cheaper than threads and are used in asynchronous programming.
+
+### What is ThreadId ?
+A ThreadId is a unique identifier for a thread in Rust. Each thread is assigned a unique ID that can be used for debugging or logging purposes.
+
+
+### What is Multithreaded Programming ?
+Multithreaded programming involves using multiple threads to execute tasks concurrently. Rust’s std::thread module provides tools for creating and managing threads safely.
+
+Benefits
+Increased performance by parallel execution.
+
+Better utilization of CPU cores.
+
+Challenges
+Managing shared resources safely (handled by Rust using ownership and borrowing rules).
+
+Avoiding deadlocks and race conditions.
+
+### How to Kill a Thread ?
+Rust does not provide direct APIs to kill threads, as threads are expected to terminate gracefully. Threads should be designed to stop based on signals or conditions.
+
+### How to join multiple threads ?
+The join method blocks the current thread until the target thread finishes execution. You can join multiple threads by storing their handles in a collection and iterating over them.
+
+### how to kill a task ?
+Tasks in Rust are typically managed by async runtimes and are not "killed" directly. Instead, you can use cancellation tokens or other signaling mechanisms.
+
+### How to join Multiple Tasks ?
+In asynchronous programming, you can use tokio::join! or futures::join! to join multiple tasks.
+
+### thread_local! Macro?
+The thread_local! macro creates thread-local storage, which means each thread gets its own copy of the data. It is useful when data is not meant to be shared across threads.
