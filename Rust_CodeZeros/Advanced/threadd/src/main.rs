@@ -5,18 +5,12 @@ use std::thread;
 //kill thread using atomic flag
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
-// use std::time::Duration;
+use std::time::Duration;
 
 
 // how to kill task 
 use tokio::sync::watch;
 use tokio::time::{sleep, Duration};
-
-//thread_local! macro
-
-thread_local!{
-    static THREAD_ID:std::cell:cell::Cell<u32>=std::cell::Cell::new(0);
-}
 
 
 // //joining multiple task
@@ -109,24 +103,47 @@ fn main() {
 
     println!("all threads joined")
 
-    fn main()
+}
+
+
+//thread_locl!
+use std::thread;
+
+thread_local! {
+    static THREAD_ID: std::cell::Cell<u32> = std::cell::Cell::new(0);
+}
+
+fn main() {
+    THREAD_ID.with(|id| id.set(1));
+    let handle = thread::spawn(|| {
+        THREAD_ID.with(|id| {
+            id.set(2);
+            println!("Thread-local value: {}", id.get());
+        });
+    });
+
+    handle.join().unwrap();
+
+    THREAD_ID.with(|id| {
+        println!("Main thread-local value: {}", id.get());
+    });
+}
+
+
+//lazy_static!
+
+#[macro_use]
+extern create lazy_static!;
+
+use std::colletions::HashMap;
+
+lazy_static!
+{
+    static ref CONFIG:HashMap<&'static str,&'static str>=
     {
-        THREAD_ID.with(|id| id.set(1));
-        let handle4=thread::spawn(||{
-            THREAD_ID.with(|id|
-            {
-                id.set(2);
-                println!("thread-local value:{}",id.get());
-            });
-        });
-
-        handle4.join().unwrap();
-
-        THREAD_ID.with(|id|
-        {
-            println!("main thread-local value:{}",id.get());
-
-        });
+        let mut m=HashMap::new();
+        m.insert("Key1","Value1");
+        m.insert("Key2","value2");
+        m
     }
-
 }

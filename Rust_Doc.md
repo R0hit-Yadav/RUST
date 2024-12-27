@@ -124,3 +124,27 @@ In asynchronous programming, you can use tokio::join! or futures::join! to join 
 
 ### thread_local! Macro?
 The thread_local! macro creates thread-local storage, which means each thread gets its own copy of the data. It is useful when data is not meant to be shared across threads.
+
+### lazy_static! Macro?
+The lazy_static! macro is used to define global, lazily initialized static variables. It is often used for configurations, caches, or other static resources.
+
+
+Feature	Description
+Thread	                A unit of execution managed by the OS.
+
+Task	                Lightweight unit of work managed by an async runtime.
+
+ThreadId	            Unique identifier for a thread.
+
+Multithreading	        Executing tasks concurrently using multiple threads.
+
+Kill Thread/Task	    Use signals or flags to stop execution gracefully.
+
+Join Threads	        Use join method to wait for threads to complete.
+
+Join Tasks	            Use tokio::join! or futures::join! to wait for multiple async tasks.
+
+thread_local!	        Provides thread-local storage for per-thread data.
+
+lazy_static!	        Creates global, lazily initialized static variables.
+
