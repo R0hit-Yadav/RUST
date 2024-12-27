@@ -129,7 +129,8 @@ The thread_local! macro creates thread-local storage, which means each thread ge
 The lazy_static! macro is used to define global, lazily initialized static variables. It is often used for configurations, caches, or other static resources.
 
 
-Feature	                Description
+Feature ->                Description
+
 Thread->	                A unit of execution managed by the OS.
 
 Task->	                Lightweight unit of work managed by an async runtime.
