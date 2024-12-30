@@ -285,3 +285,20 @@ RwLock: Optimized for read-heavy workloads.
 Async Locks: Non-blocking locks for async environments.
 
 
+
+# Lifetime Spacifiers
+Lifetime specifiers in Rust are a way to associate lifetimes (the scope during which a reference is valid) with references in functions, structs, or methods to ensure memory safety. Rust's ownership system ensures no dangling references, and lifetimes are the mechanism for explicitly declaring how references relate to each other.
+
+### What Are Lifetime Specifiers?
+Denoted by an apostrophe (e.g., 'a), a lifetime specifier associates a reference with a specific scope.
+
+Helps Rust's borrow checker understand how long references are valid and prevent dangling pointers.
+
+
+### Where Can They Be Used?
+Function Signatures: To specify relationships between input and output lifetimes.
+
+Struct Definitions: To associate the lifetime of struct fields with an external scope.
+
+Traits and Implementations: To define lifetimes in trait bounds or implementations.
+
