@@ -259,6 +259,8 @@ Allows multiple readers or one writer at a time.
 
 Ensures more efficient access when multiple threads need read-only access.
 
+summary
+
 Arc: Share immutable data between threads.
 
 RefCell: Runtime-checked mutability in single-threaded contexts.

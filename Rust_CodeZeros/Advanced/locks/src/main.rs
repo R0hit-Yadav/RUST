@@ -64,26 +64,26 @@
 
 
 
-// // RwLock(Read-Write Lock)
-// use std::sync::{Arc,RwLock};
-// use std::thread;
+// RwLock(Read-Write Lock)
+use std::sync::{Arc,RwLock};
+use std::thread;
 
-// fn main()
-// {
-//     let data=Arc::new(RwLock::new(vec![1,2,3]));
+fn main()
+{
+    let data=Arc::new(RwLock::new(vec![1,2,3]));
 
-//     let data_clone=Arc::clone(&data);
-//     let writer=thread::spawn(move||{
-//         let mut write_guard=data_clone.write().unwrap();
-//         write_guard.push(4);//write acces
-//     });
+    let data_clone=Arc::clone(&data);
+    let writer=thread::spawn(move||{
+        let mut write_guard=data_clone.write().unwrap();
+        write_guard.push(4);//write acces
+    });
 
-//     let data_clone=Arc::clone(&data);
-//     let reader=thread::spawn(move||{
-//         let read_guard=data_clone.read().unwrap();
-//         println!("Read:{:?}",*read_guard);//read access
-//     });
+    let data_clone=Arc::clone(&data);
+    let reader=thread::spawn(move||{
+        let read_guard=data_clone.read().unwrap();
+        println!("Read:{:?}",*read_guard);//read access
+    });
 
-//     writer.join().unwrap();
-//     reader.join().unwrap();
-// }
+    writer.join().unwrap();
+    reader.join().unwrap();
+}
