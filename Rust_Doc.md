@@ -177,3 +177,23 @@ Useful for tasks where the sender doesn’t depend on immediate processing by th
 
 Typically buffered, allowing a fixed number of messages to be queued.
 
+
+### Unbounded Channels
+Unlimited capacity; messages are stored until the receiver consumes them.
+
+Can lead to high memory usage if the sender produces faster than the receiver consumes.
+
+
+### Bounded Channels
+Fixed capacity; if the buffer is full, the sender blocks (sync) or waits (async).
+
+Prevents unlimited memory usage.
+
+
+1.Use synchronous channels (std::sync::mpsc) for tightly synchronized communication between threads.
+
+2.Use asynchronous channels (tokio::sync::mpsc) for loosely coupled async tasks.
+
+3.Choose bounded channels to limit memory usage or unbounded channels for simplicity.
+
+4.Advanced crates like Crossbeam offer more flexibility with channels.

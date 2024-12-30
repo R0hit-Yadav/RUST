@@ -23,28 +23,72 @@
 
 
 
-//asynchronous channles
 
-use tokio::sync::mpsc;
-use tokio::time::{sleep,Duration};
 
-#[tokio::main]
+// //asynchronous channles
 
-async fn main()
+// use tokio::sync::mpsc;
+// use tokio::time::{sleep,Duration};
+
+// #[tokio::main]
+
+// async fn main()
+// {
+//     let (tx,mut rx)=mpsc::channel(10);
+
+//     tokio::spawn(async move{
+//         for i in 1..5
+//         {
+//             tx.send(i).await.unwrap();
+//             println!("Sent {}",i);
+//             sleep(Duration::from_millis(100)).await;
+//         }
+
+//     });
+
+//     while let Some(received)=rx.recv().await{
+//         println!("Received {}",received);
+//     }
+// }
+
+
+
+
+
+// //unbounded channels
+// use tokio::sync::mpsc;
+
+// #[tokio::main]
+// async fn main()
+// {
+//     let (tx,mut rx)=mpsc::unbounded_channel();
+
+//     tx.send("hi my name is rohit").unwrap();
+
+//     if let Some(value)=rx.recv().await
+//     {
+//         println!("received {}",value);
+//     }
+// }
+
+
+
+
+
+//bounded channels
+use std::sync::mpsc::sync_channel;
+
+fn main()
 {
-    let (tx,mut rx)=mpsc::channel(10);
+    let(tx,rx)=sync_channel(2);
 
-    tokio::spawn(async move{
-        for i in 1..5
-        {
-            tx.send(i).await.unwrap();
-            println!("Sent {}",i);
-            sleep(Duration::from_millis(100)).await;
-        }
+    tx.send(1).unwrap();
+    tx.send(2).unwrap();
+    println!("Send 2 message");
 
-    });
-
-    while let Some(received)=rx.recv().await{
+    for received in rx
+    {
         println!("Received {}",received);
     }
 }
+
