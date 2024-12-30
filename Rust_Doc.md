@@ -370,3 +370,22 @@ It ensures memory safety through Rust's ownership model.
 
 
 
+# Features in Rust 
+In Rust, features are optional components or functionalities of a crate that can be enabled or disabled based on the needs of a project. Features allow crate authors and users to selectively compile parts of a crate, reducing binary size and improving performance by including only the required functionality.
+
+### What are Features?
+Features in Rust are compile-time configurations that allow conditional compilation of code.
+
+Defined in a crate’s Cargo.toml file under the [features] section.
+
+Can be used to enable or disable specific functionalities within a crate.
+
+### Why Use Features?
+Selective Functionality: Enables conditional compilation of code based on the user's needs.
+
+Reduce Binary Size: Exclude unnecessary code to make binaries smaller and faster.
+
+Flexibility: Add or remove functionalities without changing the core library.
+
+Integration: Manage optional dependencies with features.
+
