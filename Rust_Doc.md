@@ -149,3 +149,31 @@ thread_local!->	        Provides thread-local storage for per-thread data.
 
 lazy_static!->	        Creates global, lazily initialized static variables.
 
+
+# Channels 
+A channel in Rust is a mechanism for communication between threads or asynchronous tasks. It allows one thread or task to send data to another in a safe and synchronized manner. Rust channels are part of the message-passing model for concurrency.
+
+### What is it Used For?
+Communication between threads.
+
+Sharing data between asynchronous tasks.
+
+Decoupling producers and consumers.
+
+Synchronizing execution of tasks or threads.
+
+
+### Synchronous Channels (Sync)
+The sending thread will block until the receiver consumes the message.
+
+Useful for tightly synchronized communication.
+
+Ensures that data is always handled before more is sent.
+
+### Asynchronous Channels (Async)
+The sender can continue without waiting for the receiver to process the message.
+
+Useful for tasks where the sender doesn’t depend on immediate processing by the receiver.
+
+Typically buffered, allowing a fixed number of messages to be queued.
+
