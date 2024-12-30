@@ -259,6 +259,19 @@ Allows multiple readers or one writer at a time.
 
 Ensures more efficient access when multiple threads need read-only access.
 
+
+=>use cases for locks
+
+Mutex: When only one thread needs access to modify data at a time.
+
+RwLock: When multiple readers or a single writer are required for shared data.
+
+Arc: For sharing immutable data across threads.
+
+RefCell: For runtime-checked mutability in single-threaded contexts.
+
+
+
 summary
 
 Arc: Share immutable data between threads.

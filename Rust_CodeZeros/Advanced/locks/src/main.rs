@@ -64,26 +64,55 @@
 
 
 
-// RwLock(Read-Write Lock)
-use std::sync::{Arc,RwLock};
-use std::thread;
+// // RwLock(Read-Write Lock)
+// use std::sync::{Arc,RwLock};
+// use std::thread;
 
-fn main()
+// fn main()
+// {
+//     let data=Arc::new(RwLock::new(vec![1,2,3]));
+
+//     let data_clone=Arc::clone(&data);
+//     let writer=thread::spawn(move||{
+//         let mut write_guard=data_clone.write().unwrap();
+//         write_guard.push(4);//write acces
+//     });
+
+//     let data_clone=Arc::clone(&data);
+//     let reader=thread::spawn(move||{
+//         let read_guard=data_clone.read().unwrap();
+//         println!("Read:{:?}",*read_guard);//read access
+//     });
+
+//     writer.join().unwrap();
+//     reader.join().unwrap();
+// }
+
+
+//async Mutex
+use tokio::sync::Mutex;
+use std::sync::Arc;
+
+#[tokio::main]
+async fn main()
 {
-    let data=Arc::new(RwLock::new(vec![1,2,3]));
+    let counter=Arc::new(Mutex::new(0));
+    let mut handles=vec![];
 
-    let data_clone=Arc::clone(&data);
-    let writer=thread::spawn(move||{
-        let mut write_guard=data_clone.write().unwrap();
-        write_guard.push(4);//write acces
-    });
+    for _ in 0..10
+    {
+        let counter=Arc::clone(&counter);
+        let handle=tokio::spawn(async move{
+            let mut num=counter.lock().await;
+            *num+=1;
+        });
+        handles.push(handle);
+    }
 
-    let data_clone=Arc::clone(&data);
-    let reader=thread::spawn(move||{
-        let read_guard=data_clone.read().unwrap();
-        println!("Read:{:?}",*read_guard);//read access
-    });
+    for handle in handles
+    {
+        handle.await.unwrap();
 
-    writer.join().unwrap();
-    reader.join().unwrap();
+    }
+    println!("Result:{}",*counter.lock().await);
 }
