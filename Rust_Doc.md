@@ -339,3 +339,34 @@ Object Methods:
 Require self (or a reference to it).
 
 Used for tasks specific to an instance.
+
+
+# Box 
+In Rust, a Box<T> is a smart pointer that provides heap allocation for a value of type T. Unlike regular variables, which are typically stored on the stack, Box stores its contents on the heap and keeps a pointer to the data.
+
+### What is Box?
+Box is a standard library type (std::boxed::Box) that allows you to store data on the heap.
+
+It provides ownership of the heap-allocated value.
+
+A Box is lightweight since it only contains a pointer to the heap memory.
+
+### When is Box Used?
+Heap Allocation: When you need to allocate data on the heap instead of the stack.
+
+Recursive Data Structures: Enables defining recursive types that have indeterminate or unbounded sizes.
+
+Trait Objects: Useful for enabling dynamic dispatch by storing trait objects.
+
+Reducing Stack Size: Helps to offload large data from the stack to the heap.
+
+
+
+Box is for heap allocation and single ownership.
+
+Useful in recursive data structures and polymorphism.
+
+It ensures memory safety through Rust's ownership model.
+
+
+
