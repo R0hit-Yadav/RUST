@@ -302,3 +302,40 @@ Struct Definitions: To associate the lifetime of struct fields with an external 
 
 Traits and Implementations: To define lifetimes in trait bounds or implementations.
 
+
+# Structs
+
+## Static Methods and Object Methods in Rust 
+
+### Satatic Methods
+These are methods that do not take a reference to self as an argument.
+
+They are associated with the type itself rather than a specific instance of the type.
+
+Declared using impl StructName.
+
+Invoked using the StructName::method_name() syntax.
+
+
+### Object Methods 
+These are methods that operate on a specific instance of the struct.
+
+They take self (or &self/&mut self) as their first parameter.
+
+Declared within the same impl block.
+
+Invoked using the instance.method_name() syntax.
+
+
+Static Methods:
+
+No self parameter.
+
+Used for tasks that don't depend on specific instances (e.g., constructors).
+
+
+Object Methods:
+
+Require self (or a reference to it).
+
+Used for tasks specific to an instance.
