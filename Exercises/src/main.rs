@@ -76,6 +76,14 @@ mod ex15_3;
 mod ex15_4;
 mod ex15_5;
 
+mod ex16_1;
+mod ex16_2;
+mod ex16_3;
+
+mod ex18_1;
+
+
+
 
 
 
@@ -157,6 +165,12 @@ fn main() {
     ex15_3::main();
     ex15_4::main();
     ex15_5::main();
+
+    ex16_1::main();
+    ex16_2::main();
+    ex16_3::main();
+
+    ex18_1::main();
 
 }
 
