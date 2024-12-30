@@ -226,3 +226,47 @@ It can be called multiple times.
 The closure takes ownership of the environment (moves captured variables).
 
 It can only be called once because the environment is consumed.
+
+
+# Locks 
+Locks in Rust are used for safe concurrent programming to manage shared resources across threads or asynchronous tasks. Rust ensures data race safety at compile time by requiring explicit synchronization mechanisms like Mutex, RwLock, and Arc.
+
+### Arc (Atomic Reference Counted)
+Used to share ownership of immutable data between threads.
+
+Provides thread-safe reference counting.
+
+Immutable data is shared; mutability is not allowed directly.
+
+Use Arc<Mutex<T>> to share mutable data safely.
+
+### RefCell 
+Provides interior mutability for single-threaded contexts.
+
+Mutability is enforced at runtime.
+
+Use RefCell<T> when you want to mutate data while borrowing it.
+
+### Mutex
+Ensures mutual exclusion for mutable access to shared data.
+
+Only one thread can access the locked data at a time.
+
+The lock is released when the guard (returned by lock()) goes out of scope.
+
+### RwLock (Read-Write Lock)
+Allows multiple readers or one writer at a time.
+
+Ensures more efficient access when multiple threads need read-only access.
+
+Arc: Share immutable data between threads.
+
+RefCell: Runtime-checked mutability in single-threaded contexts.
+
+Mutex: Guarantees mutual exclusion for mutable access.
+
+RwLock: Optimized for read-heavy workloads.
+
+Async Locks: Non-blocking locks for async environments.
+
+
