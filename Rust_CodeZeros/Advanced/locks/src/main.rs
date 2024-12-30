@@ -36,27 +36,54 @@
 
 
 
-// Mutex
-use std::sync::{Arc,Mutex};
-use std::thread;
-fn main()
-{
-    let counter=Arc::new(Mutex::new(0));
-    let mut handles=vec![];
+// // Mutex
+// use std::sync::{Arc,Mutex};
+// use std::thread;
+// fn main()
+// {
+//     let counter=Arc::new(Mutex::new(0));
+//     let mut handles=vec![];
 
-    for _ in 0..10
-    {
-        let counter=Arc::clone(&counter);
-        let handle=thread::spawn(move||{
-            let mut num=counter.lock().unwrap();
-            *num+=1;
+//     for _ in 0..10
+//     {
+//         let counter=Arc::clone(&counter);
+//         let handle=thread::spawn(move||{
+//             let mut num=counter.lock().unwrap();
+//             *num+=1;
 
-        });
-        handles.push(handle);
-    }
-    for handle in handles
-    {
-        handle.join().unwrap();
-    }
-    println!("Result:{}",*counter.lock().unwrap());
-}
+//         });
+//         handles.push(handle);
+//     }
+//     for handle in handles
+//     {
+//         handle.join().unwrap();
+//     }
+//     println!("Result:{}",*counter.lock().unwrap());
+// }
+
+
+
+
+// // RwLock(Read-Write Lock)
+// use std::sync::{Arc,RwLock};
+// use std::thread;
+
+// fn main()
+// {
+//     let data=Arc::new(RwLock::new(vec![1,2,3]));
+
+//     let data_clone=Arc::clone(&data);
+//     let writer=thread::spawn(move||{
+//         let mut write_guard=data_clone.write().unwrap();
+//         write_guard.push(4);//write acces
+//     });
+
+//     let data_clone=Arc::clone(&data);
+//     let reader=thread::spawn(move||{
+//         let read_guard=data_clone.read().unwrap();
+//         println!("Read:{:?}",*read_guard);//read access
+//     });
+
+//     writer.join().unwrap();
+//     reader.join().unwrap();
+// }
