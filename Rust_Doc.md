@@ -197,3 +197,32 @@ Prevents unlimited memory usage.
 3.Choose bounded channels to limit memory usage or unbounded channels for simplicity.
 
 4.Advanced crates like Crossbeam offer more flexibility with channels.
+
+
+
+# Closures 
+A closure is a function-like construct that can capture variables from its surrounding environment. It is anonymous and can be stored in variables, passed as arguments, or returned from other functions. Closures in Rust are similar to lambdas in other programming languages.
+
+|parameters| expression_or_block
+|parameters|: The inputs to the closure.
+expression_or_block: The body of the closure.
+
+
+## Types of clsures
+
+### Fn 
+The closure only borrows variables from the environment.
+
+It doesn’t modify or move captured values.
+
+Closures implementing Fn can be called multiple times.
+
+### FnMut
+The closure can modify the environment by mutably borrowing variables.
+
+It can be called multiple times.
+
+### FnOnce
+The closure takes ownership of the environment (moves captured variables).
+
+It can only be called once because the environment is consumed.
