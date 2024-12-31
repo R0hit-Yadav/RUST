@@ -389,3 +389,60 @@ Flexibility: Add or remove functionalities without changing the core library.
 
 Integration: Manage optional dependencies with features.
 
+
+
+# Std Libs
+Rust's standard library (std) provides essential tools for memory management, file operations, time manipulation, and advanced functional programming constructs. Below are the requested concepts with detailed explanations, examples, and outputs.
+
+## std::mem
+std::mem provides functions for memory manipulation, such as replacing, swapping, or forgetting values. It is particularly useful for working with values at a low level.
+
+std::mem::replace Replaces the value at a mutable reference, returning the old value.
+
+std::mem::swap Swaps two values.
+
+std::mem::take Replaces a value with its default, returning the old value.
+
+std::mem::forget Prevents a value from being dropped (use with caution to avoid leaks).
+
+
+## std::fs
+std::fs provides APIs for filesystem operations, such as reading, writing, and managing files and directories.
+
+
+## std::time::Duration (Time Managment)
+
+std::time::Instant ->Used for measuring time intervals.
+
+
+## Differences: self, &self, &mut self
+self: Consumes the instance, transferring ownership.
+
+&self: Borrow the instance immutably.
+
+&mut self: Borrow the instance mutably.
+
+## Usecase of build.rs
+A special script in Rust used for build-time customization, such as generating code or compiling native libraries.
+
+
+## Functional Methods
+Result
+
+Option
+
+and_then
+
+ok_or_else
+
+map
+
+map_err
+
+iter
+
+iter_mut
+
+into_iter
+
+
