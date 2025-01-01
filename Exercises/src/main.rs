@@ -22,7 +22,7 @@ mod ex4_2;
 mod ex4_3;
 mod ex4_4;
 mod ex4_5;
-// mod ex4_6;
+mod ex4_6;
 
 mod ex5_1;
 mod ex5_2;
@@ -81,6 +81,14 @@ mod ex16_2;
 mod ex16_3;
 
 mod ex18_1;
+mod ex18_2;
+mod ex18_3;
+mod ex18_4;
+mod ex18_5;
+
+mod ex19_1;
+mod ex19_2;
+mod ex19_3;
 
 
 
@@ -111,7 +119,7 @@ fn main() {
     ex4_3::main();
     ex4_4::main();
     ex4_5::main();
-    // ex4_6::main();
+    ex4_6::main();
 
     ex5_1::main();
     ex5_2::main();
@@ -171,6 +179,14 @@ fn main() {
     ex16_3::main();
 
     ex18_1::main();
+    ex18_2::main();
+    ex18_3::main();
+    ex18_4::main();
+    ex18_5::main();
+
+    ex19_1::main();
+    ex19_2::main();
+    ex19_3::main();
 
 }
 

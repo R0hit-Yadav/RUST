@@ -2,7 +2,8 @@
 // essential. This module helps you get familiar with the structure of using an
 // iterator and how to go through elements within an iterable collection.
 
-pub fn main() {
+pub fn main() 
+{
     // You can optionally experiment here.
     println!("ex18.1 run");
 }

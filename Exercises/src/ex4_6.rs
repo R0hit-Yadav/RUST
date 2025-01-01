@@ -1,5 +1,5 @@
-fn main() {
-    // You can optionally experiment here.
+pub fn main() {
+    println!("ex4.6 run");
 }
 
 #[cfg(test)]
