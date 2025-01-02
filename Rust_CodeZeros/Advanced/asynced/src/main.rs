@@ -60,7 +60,7 @@ async fn perform_task()
 #[tokio::main]
 async fn main()
 {
-    let s=
+
     println!("Startinf process");
     perform_task().await;
     println!("finish...");
