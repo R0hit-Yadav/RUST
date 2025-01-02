@@ -91,7 +91,20 @@ mod ex19_2;
 mod ex19_3;
 
 
+mod ex20_1;
+mod ex20_2;
+mod ex20_3;
 
+
+mod ex21_1;
+mod ex21_2;
+mod ex21_3;
+mod ex21_4;
+
+
+mod ex22_1;
+mod ex22_2;
+mod ex22_3;
 
 
 
@@ -187,6 +200,21 @@ fn main() {
     ex19_1::main();
     ex19_2::main();
     ex19_3::main();
+
+
+    ex20_1::main();
+    ex20_2::main();
+    ex20_3::main();
+
+    ex21_1::main();
+    ex21_2::main();
+    ex21_3::main();
+    ex21_4::main();
+
+
+    ex22_1::main();
+    ex22_2::main();
+    ex22_3::main();
 
 }
 
