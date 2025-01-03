@@ -1,31 +1,31 @@
-// // Synchronous Channels
-// use std::sync::mpsc;
-// use std::thread;
-// fn main() {
+// Synchronous Channels
+use std::sync::mpsc;
+use std::thread;
+fn main() {
 
-//     let(tx,rx)=mpsc::channel();
+    let(tx,rx)=mpsc::channel();
 
-//     let handle=thread::spawn(move||{
-//         for i in 1..5
-//         {
-//             tx.send(i).unwrap();
-//             println!("Sent {}",i);
-//         }
-//     });
+    let handle=thread::spawn(move||{
+        for i in 1..50
+        {
+            tx.send(i).unwrap();
+            println!("Sent {}",i);
+        }
+    });
 
-//     for received in rx
-//     {
-//         println!("Received {}",received);
-//     }
+    for received in rx
+    {
+        println!("Received {}",received);
+    }
 
-//     handle.join().unwrap();
-// }
-
-
+    handle.join().unwrap();
+}
 
 
 
-// //asynchronous channles
+
+
+//asynchronous channles
 
 // use tokio::sync::mpsc;
 // use tokio::time::{sleep,Duration};
@@ -37,7 +37,7 @@
 //     let (tx,mut rx)=mpsc::channel(10);
 
 //     tokio::spawn(async move{
-//         for i in 1..5
+//         for i in 1..15
 //         {
 //             tx.send(i).await.unwrap();
 //             println!("Sent {}",i);
@@ -63,7 +63,7 @@
 // {
 //     let (tx,mut rx)=mpsc::unbounded_channel();
 
-//     tx.send("hi my name is rohit").unwrap();
+//     tx.send("hi my name is rohit and i am coder!!").unwrap();
 
 //     if let Some(value)=rx.recv().await
 //     {
@@ -75,20 +75,20 @@
 
 
 
-//bounded channels
-use std::sync::mpsc::sync_channel;
+// //bounded channels
+// use std::sync::mpsc::sync_channel;
 
-fn main()
-{
-    let(tx,rx)=sync_channel(2);
+// fn main()
+// {
+//     let(tx,rx)=sync_channel(2);
 
-    tx.send(1).unwrap();
-    tx.send(2).unwrap();
-    println!("Send 2 message");
+//     tx.send(1).unwrap();
+//     tx.send(2).unwrap();
+//     println!("Send 2 message");
 
-    for received in rx
-    {
-        println!("Received {}",received);
-    }
-}
+//     for received in rx
+//     {
+//         println!("Received {}",received);
+//     }
+// }
 
