@@ -1,6 +1,5 @@
-standard library 
-
-std::men
+// standard library 
+// std::men
 
 //std::mem::replace
 use std::mem;
@@ -86,7 +85,7 @@ fn main()-> std::io::Result<()>
 
 
 
-time management
+// time management
 std::time::Duration 
 
 
@@ -158,7 +157,7 @@ fn main()
 
 
 
-functional methods 
+// functional methods 
 
 //result 
 fn divide(a:i32,b:i32)->Result<i32,String>
